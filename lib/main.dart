@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hack10/core/router/app_router.dart';
+// A importação do weather_service foi removida daqui
 import 'package:hack10/views/dashboard/bloc/dashboard_bloc.dart';
 import 'package:hack10/views/dashboard/views/historic/dashboard_historic_route.dart';
 import 'package:hack10/views/dashboard/views/initial/dashboard_initial_route.dart';
@@ -9,23 +10,26 @@ import 'package:hack10/views/dashboard/views/profile/dashboard_profile_route.dar
 import 'package:hack10/views/login/login_route.dart';
 
 void main() async {
+  // O seu código original para iniciar o app.
   runApp( MyApp(
-      appRouter: await getAppRouter(
-  configuration: RouterConfiguration(
-  initialRoute:
-  LoginRoute().routePath,
- /* (await sl.get<UserSessionRepository>().hasActiveSession())
+    appRouter: await getAppRouter(
+      configuration: RouterConfiguration(
+          initialRoute:
+          LoginRoute().routePath,
+          /* (await sl.get<UserSession-repository>().hasActiveSession())
       ? HomeRoute().routePath
       : LoginRoute().routePath*/
-  getModuleRoutes: (_) => [
-    LoginRoute(),
-    DashboardInitialRoute(),
-    DashboardHistoricRoute(),
-    DashboardProfileRoute(),
-  ]),
-  ),
+          getModuleRoutes: (_) => [
+            LoginRoute(),
+            DashboardInitialRoute(),
+            DashboardHistoricRoute(),
+            DashboardProfileRoute(),
+          ]),
+    ),
   ));
 }
+
+// O resto do seu arquivo (class MyApp, etc.) permanece exatamente igual.
 
 class MyApp extends StatefulWidget {
   final GoRouter appRouter;
