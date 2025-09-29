@@ -8,24 +8,26 @@ import 'package:hack10/views/dashboard/views/historic/dashboard_historic_route.d
 import 'package:hack10/views/dashboard/views/initial/dashboard_initial_route.dart';
 import 'package:hack10/views/dashboard/views/profile/dashboard_profile_route.dart';
 import 'package:hack10/views/login/login_route.dart';
+import 'package:hack10/views/map_sample/map_sample_route.dart';
 
 void main() async {
   // O seu código original para iniciar o app.
   runApp( MyApp(
-    appRouter: await getAppRouter(
-      configuration: RouterConfiguration(
-          initialRoute:
-          LoginRoute().routePath,
-          /* (await sl.get<UserSession-repository>().hasActiveSession())
+      appRouter: await getAppRouter(
+  configuration: RouterConfiguration(
+  initialRoute:
+  MapSampleRoute().routePath,
+ /* (await sl.get<UserSessionRepository>().hasActiveSession())
       ? HomeRoute().routePath
       : LoginRoute().routePath*/
-          getModuleRoutes: (_) => [
-            LoginRoute(),
-            DashboardInitialRoute(),
-            DashboardHistoricRoute(),
-            DashboardProfileRoute(),
-          ]),
-    ),
+  getModuleRoutes: (_) => [
+    LoginRoute(),
+    MapSampleRoute(),
+    DashboardInitialRoute(),
+    DashboardHistoricRoute(),
+    DashboardProfileRoute(),
+  ]),
+  ),
   ));
 }
 
