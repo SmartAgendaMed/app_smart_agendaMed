@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hack10/core/router/app_router.dart';
+// A importação do weather_service foi removida daqui
 import 'package:hack10/views/dashboard/bloc/dashboard_bloc.dart';
 import 'package:hack10/views/dashboard/views/historic/dashboard_historic_route.dart';
 import 'package:hack10/views/dashboard/views/initial/dashboard_initial_route.dart';
@@ -10,6 +11,7 @@ import 'package:hack10/views/login/login_route.dart';
 import 'package:hack10/views/map_sample/map_sample_route.dart';
 
 void main() async {
+  // O seu código original para iniciar o app.
   runApp( MyApp(
       appRouter: await getAppRouter(
   configuration: RouterConfiguration(
@@ -28,6 +30,8 @@ void main() async {
   ),
   ));
 }
+
+// O resto do seu arquivo (class MyApp, etc.) permanece exatamente igual.
 
 class MyApp extends StatefulWidget {
   final GoRouter appRouter;
