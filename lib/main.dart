@@ -7,18 +7,20 @@ import 'package:hack10/views/dashboard/views/historic/dashboard_historic_route.d
 import 'package:hack10/views/dashboard/views/initial/dashboard_initial_route.dart';
 import 'package:hack10/views/dashboard/views/profile/dashboard_profile_route.dart';
 import 'package:hack10/views/login/login_route.dart';
+import 'package:hack10/views/map_sample/map_sample_route.dart';
 
 void main() async {
   runApp( MyApp(
       appRouter: await getAppRouter(
   configuration: RouterConfiguration(
   initialRoute:
-  LoginRoute().routePath,
+  MapSampleRoute().routePath,
  /* (await sl.get<UserSessionRepository>().hasActiveSession())
       ? HomeRoute().routePath
       : LoginRoute().routePath*/
   getModuleRoutes: (_) => [
     LoginRoute(),
+    MapSampleRoute(),
     DashboardInitialRoute(),
     DashboardHistoricRoute(),
     DashboardProfileRoute(),

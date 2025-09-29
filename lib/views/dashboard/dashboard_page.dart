@@ -72,7 +72,12 @@ class DashboardPage extends StatelessWidget {
           )
         ],
       ),
-      body: body,
+      body: SingleChildScrollView(
+
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: body)),
     );
   }
 }
